@@ -3,21 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>White's Plumbing Services | 24/7 Licensed Plumber</title>
-    <meta name="description" content="White's Plumbing Services — fast, reliable 24/7 plumbing. Licensed & insured. Free estimates, emergency repairs, drain cleaning, water heaters & more." />
-    <meta name="author" content="White's Plumbing Services" />
+    <title>Redirecting…</title>
+    <script>
+      const pathSegmentsToKeep = 1;
+      const { location } = window;
+      const redirectTo =
+        location.protocol +
+        "//" +
+        location.hostname +
+        (location.port ? `:${location.port}` : "") +
+        location.pathname.split("/").slice(0, 1 + pathSegmentsToKeep).join("/") +
+        "/?/" +
+        location.pathname
+          .slice(1)
+          .split("/")
+          .slice(pathSegmentsToKeep)
+          .join("/")
+          .replace(/&/g, "~and~") +
+        (location.search ? `&${location.search.slice(1).replace(/&/g, "~and~")}` : "") +
+        location.hash;
 
-    <meta property="og:title" content="White's Plumbing Services | 24/7 Licensed Plumber" />
-    <meta property="og:description" content="Fast, reliable plumbing services. Licensed & insured. Free estimates. Call (555) 123-4567." />
-    <meta property="og:type" content="website" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@Lovable" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+      location.replace(redirectTo);
+    </script>
   </head>
-
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+  <body></body>
 </html>
